@@ -11,7 +11,7 @@ const app = express();
 
 const signinRouter = require('./routes/register/signin')
 const signupRouter = require('./routes/register/signup')
-const catRouter = require('./routes/broadView/categories')
+const catRouter = require('./routes/broadView/broadViewRoute')
 
 
 // view engine setup

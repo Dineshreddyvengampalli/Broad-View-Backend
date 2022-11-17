@@ -43,7 +43,6 @@ const getChannels = async (req,res)=>{
 
 const getSchedule =async (req,res)=>{
   let {channel} = req.query
-  console.log(req.user)
   const options = {
     method: 'GET',
     url: 'https://indian-tv-schedule.p.rapidapi.com/Schedule',

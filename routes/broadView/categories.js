@@ -1,10 +1,22 @@
 const express = require('express')
 const router = express.Router()
-const catController = require('../../controller/categories')
+const broadController = require('../../controller/broadViewController')
 
 router.get('/categories',(req,res)=>{
     console.log('in the route')
-    catController(req,res)
+    broadController.catController(req,res)
+})
+
+router.get('/channel',(req,res)=>{
+    broadController.getChannels(req,res)
+})
+
+router.get('/schedule',(req,res)=>{
+    broadController.getSchedule(req,res)
+})
+
+router.get('/today-schedule',(req,res)=>{
+    broadController.getTodaySchedule(req,res)
 })
 
 

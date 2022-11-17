@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const authorizer = require('./middleware/authorizer')
 
 
 
@@ -10,6 +11,7 @@ const app = express();
 
 const signinRouter = require('./routes/register/signin')
 const signupRouter = require('./routes/register/signup')
+const catRouter = require('./routes/broadView/categories')
 
 
 // view engine setup
@@ -24,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/signin',signinRouter)
 app.use('/signup',signupRouter)
+app.use('/broadview',authorizer,catRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
